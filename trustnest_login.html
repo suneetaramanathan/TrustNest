@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrustNest Login</title>
+    <style>
+        body{font-family:Arial;background:#1a1a2e;color:white;margin:0;padding:0;}
+        nav{background:#16213e;padding:15px;display:flex;justify-content:space-between;align-items:center;}
+        .logo{color:#00d4ff;text-decoration:none;font-size:20px;font-weight:bold;}
+        .container{max-width:500px;margin:60px auto;background:#16213e;padding:40px;border-radius:15px;}
+        h1{color:#00d4ff;text-align:center;}
+        input{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #00d4ff;background:#1a1a2e;color:white;font-size:16px;box-sizing:border-box;}
+        .button{width:100%;background:#00d4ff;color:black;padding:15px;border:none;border-radius:25px;font-size:18px;cursor:pointer;margin-top:20px;}
+        a{color:#00d4ff;}
+    </style>
+</head>
+<body>
+<nav><a href="/home" class="logo">🔐 TrustNest</a></nav>
+<div class="container">
+    <h1>Welcome Back</h1>
+    <form action="/authenticate" method="POST">
+    <input type="email" name="username" placeholder="Email Address"/>
+    <input type="password" name="password" placeholder="Password"/>
+    <button type="submit" class="button">Login to Dashboard</button>
+    </form>
+    <p style="text-align:center">Don't have an account? <a href="/signup">Sign up here</a></p>
+</div>
+</body>
+</html>
