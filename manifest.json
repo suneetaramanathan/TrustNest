@@ -1,0 +1,21 @@
+{
+  "name": "TrustNest",
+  "short_name": "TrustNest",
+  "description": "AI-Powered Cybersecurity for Independent Hotels",
+  "start_url": "/home",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#00d4ff",
+  "icons": [
+    {
+      "src": "/static/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
