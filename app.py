@@ -20,6 +20,10 @@ def login():
 def contact():
     return render_template("trustnest_contact.html")
 
+@app.route("/pricing")
+def pricing():
+    return render_template("trustnest_pricing.html")
+
 @app.route("/terms")
 def terms():
     return render_template("trustnest_terms.html")
