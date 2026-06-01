@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrustNest Contact</title>
+    <style>
+        body{font-family:Arial;background:#1a1a2e;color:white;margin:0;padding:0;}
+        nav{background:#16213e;padding:15px;}
+        .logo{color:#00d4ff;text-decoration:none;font-size:20px;font-weight:bold;}
+        .container{max-width:500px;margin:60px auto;background:#16213e;padding:40px;border-radius:15px;}
+        h1{color:#00d4ff;text-align:center;}
+        input,textarea{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #00d4ff;background:#1a1a2e;color:white;font-size:16px;box-sizing:border-box;}
+        textarea{height:120px;}
+        .button{width:100%;background:#00d4ff;color:black;padding:15px;border:none;border-radius:25px;font-size:18px;cursor:pointer;margin-top:20px;}
+    </style>
+</head>
+<body>
+<nav><a href="/home" class="logo">🔐 TrustNest</a></nav>
+<div class="container">
+    <h1>Contact TrustNest</h1>
+    <form action="/contact_submit" method="POST">
+    <input type="text" name="hotel_name" placeholder="Hotel Name"/>
+    <input type="text" name="name" placeholder="Your Name"/>
+    <input type="email" name="email" placeholder="Email Address"/>
+    <textarea name="message" placeholder="Tell us about your hotel..."></textarea>
+    <button type="submit" class="button">Send Message</button>
+    </form>
+</div>
+</body>
+</html>
