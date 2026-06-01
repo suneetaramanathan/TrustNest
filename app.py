@@ -1,5 +1,5 @@
-#TrustNest v2.0 - Updated June 2026
 from flask import Flask, request, redirect, render_template
+import os
 
 app = Flask(__name__)
 
@@ -20,17 +20,13 @@ def login():
 def contact():
     return render_template("trustnest_contact.html")
 
-@app.route("/pricing")
-def pricing():
-    return render_template("trustnest_pricing.html")
+@app.route("/privacy")
+def privacy():
+    return render_template("trustnest_privacy.html")
 
 @app.route("/terms")
 def terms():
     return render_template("trustnest_terms.html")
-
-@app.route("/privacy")
-def privacy():
-    return render_template("trustnest_privacy.html")
 
 @app.route("/pricing")
 def pricing():
@@ -44,7 +40,12 @@ def authenticate():
 def dashboard():
     return render_template("trustnest_dashboard.html")
 
+@app.route("/contact_submit", methods=["POST"])
+def contact_submit():
+    name = request.form.get("name")
+    hotel = request.form.get("hotel_name")
+    return f"<h1 style='color:#00d4ff;background:#1a1a2e;padding:40px;text-align:center'>Thank you {name}!</h1>"
+
 if __name__ == "__main__":
-    import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
