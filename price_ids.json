@@ -1,0 +1,20 @@
+{
+  "TrustNest Basic": {
+    "monthly": "price_1TdKacQ5mjF6aOU8QlGIO7W6",
+    "quarterly": "price_1TdKadQ5mjF6aOU8aQxNcOt0",
+    "biannual": "price_1TdKadQ5mjF6aOU8VsUdPiav",
+    "annual": "price_1TdKadQ5mjF6aOU8bS6L4Pjs"
+  },
+  "TrustNest Standard": {
+    "monthly": "price_1TdKaeQ5mjF6aOU8k3rgE0f2",
+    "quarterly": "price_1TdKaeQ5mjF6aOU8aiVh2fJa",
+    "biannual": "price_1TdKaeQ5mjF6aOU8TEsxCevi",
+    "annual": "price_1TdKafQ5mjF6aOU8yf7CybsX"
+  },
+  "TrustNest Premium": {
+    "monthly": "price_1TdKafQ5mjF6aOU8bRx555sL",
+    "quarterly": "price_1TdKagQ5mjF6aOU8DIZ6vzKw",
+    "biannual": "price_1TdKagQ5mjF6aOU8JBJHJKHW",
+    "annual": "price_1TdKagQ5mjF6aOU8rIZ20Jjl"
+  }
+}
