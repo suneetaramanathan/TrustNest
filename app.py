@@ -1,4 +1,4 @@
-# TrustNest v2.0 - Updated June 2026
+#TrustNest v2.0 - Updated June 2026
 from flask import Flask, request, redirect, render_template
 
 app = Flask(__name__)
@@ -19,6 +19,18 @@ def login():
 @app.route("/contact")
 def contact():
     return render_template("trustnest_contact.html")
+
+@app.route("/terms")
+def terms():
+    return render_template("trustnest_terms.html")
+
+@app.route("/privacy")
+def privacy():
+    return render_template("trustnest_privacy.html")
+
+@app.route("/pricing")
+def pricing():
+    return render_template("trustnest_pricing.html")
 
 @app.route("/authenticate", methods=["GET", "POST"])
 def authenticate():
