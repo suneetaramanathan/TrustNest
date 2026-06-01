@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrustNest Dashboard</title>
+    <style>
+        body{font-family:Arial;background:#1a1a2e;color:white;padding:0;margin:0;}
+        nav{background:#16213e;padding:15px;display:flex;justify-content:space-between;}
+        .logo{color:#00d4ff;text-decoration:none;font-size:20px;font-weight:bold;}
+        h1{color:#00d4ff;text-align:center;padding-top:20px;}
+        .stats{display:flex;justify-content:center;gap:20px;margin:20px;flex-wrap:wrap;}
+        .stat{background:#16213e;padding:20px;border-radius:10px;text-align:center;}
+        .stat h2{color:#00d4ff;}
+        .alerts{padding:20px;}
+        .alert{background:#ff4444;padding:15px;margin:10px;border-radius:8px;}
+        .normal{background:#00aa44;padding:15px;margin:10px;border-radius:8px;}
+    </style>
+</head>
+<body>
+<nav><a href="/home" class="logo">🔐 TrustNest</a></nav>
+<h1>🔐 TrustNest Security Dashboard</h1>
+<div class="stats">
+    <div class="stat"><h2>210</h2><p>Activities Scanned</p></div>
+    <div class="stat"><h2>199</h2><p>Normal ✅</p></div>
+    <div class="stat"><h2>11</h2><p>Suspicious 🚨</p></div>
+</div>
+<div class="alerts">
+    <h2>Live Alerts:</h2>
+    <div class="alert">🚨 Unknown Hacker — 71 records at 23:19</div>
+    <div class="alert">🚨 John Mueller — 55 records at 23:19</div>
+    <div class="normal">✅ Anna Weber — 9 records at 23:19</div>
+    <div class="normal">✅ Maria Schmidt — 12 records at 23:19</div>
+</div>
+</body>
+</html>
