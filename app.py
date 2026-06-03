@@ -1,3 +1,6 @@
+import stripe
+import os
+stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
 from flask import Flask, request, redirect, render_template
 import os
 
@@ -31,6 +34,37 @@ def terms():
 @app.route("/pricing")
 def pricing():
     return render_template("trustnest_pricing.html")
+    
+    @app.route("/checkout/<plan>/<period>")
+def checkout(plan, period):
+    price_ids = {
+        "basic": {
+            "monthly": "price_1TdKacQ5mjF6aOU8QlGIO7W6",
+            "quarterly": "price_1TdKadQ5mjF6aOU8aQxNcOt0",
+            "biannual": "price_1TdKadQ5mjF6aOU8VsUdPiav",
+            "annual": "price_1TdKadQ5mjF6aOU8bS6L4Pjs"
+        },
+        "standard": {
+            "monthly": "price_1TdKaeQ5mjF6aOU8k3rgE0f2",
+            "quarterly": "price_1TdKaeQ5mjF6aOU8aiVh2fJa",
+            "biannual": "price_1TdKaeQ5mjF6aOU8TEsxCevi",
+            "annual": "price_1TdKafQ5mjF6aOU8yf7CybsX"
+        },
+        "premium": {
+            "monthly": "price_1TdKafQ5mjF6aOU8bRx555sL",
+            "quarterly": "price_1TdKagQ5mjF6aOU8DIZ6vzKw",
+            "biannual": "price_1TdKagQ5mjF6aOU8JBJHJKHW",
+            "annual": "price_1TdKagQ5mjF6aOU8rIZ20Jjl"
+        }
+    }
+    session = stripe.checkout.Session.create(
+        payment_method_types=["card"],
+        line_items=[{"price": price_ids[plan][period], "quantity": 1}],
+        mode="subscription",
+        success_url="https://web-production-0b35.up.railway.app/dashboard",
+        cancel_url="https://web-production-0b35.up.railway.app/pricing",
+    )
+    return redirect(session.url)
 
 @app.route("/authenticate", methods=["GET", "POST"])
 def authenticate():
