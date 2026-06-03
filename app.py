@@ -1,8 +1,8 @@
-import stripe
-import os
-stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
 from flask import Flask, request, redirect, render_template
 import os
+import stripe
+
+stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
 
 app = Flask(__name__)
 
@@ -34,8 +34,22 @@ def terms():
 @app.route("/pricing")
 def pricing():
     return render_template("trustnest_pricing.html")
-    
-    @app.route("/checkout/<plan>/<period>")
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("trustnest_dashboard.html")
+
+@app.route("/contact_submit", methods=["POST"])
+def contact_submit():
+    name = request.form.get("name")
+    hotel = request.form.get("hotel_name")
+    return f"<h1 style='color:#00d4ff;background:#1a1a2e;padding:40px;text-align:center'>Thank you {name} from {hotel}!</h1>"
+
+@app.route("/authenticate", methods=["GET", "POST"])
+def authenticate():
+    return redirect("/dashboard")
+
+@app.route("/checkout/<plan>/<period>")
 def checkout(plan, period):
     price_ids = {
         "basic": {
@@ -65,20 +79,6 @@ def checkout(plan, period):
         cancel_url="https://web-production-0b35.up.railway.app/pricing",
     )
     return redirect(session.url)
-
-@app.route("/authenticate", methods=["GET", "POST"])
-def authenticate():
-    return redirect("/dashboard")
-
-@app.route("/dashboard")
-def dashboard():
-    return render_template("trustnest_dashboard.html")
-
-@app.route("/contact_submit", methods=["POST"])
-def contact_submit():
-    name = request.form.get("name")
-    hotel = request.form.get("hotel_name")
-    return f"<h1 style='color:#00d4ff;background:#1a1a2e;padding:40px;text-align:center'>Thank you {name}!</h1>"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
