@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrustNest Dashboard</title>
+    <meta http-equiv="refresh" content="30">
+    <style>
+        body{font-family:Arial;background:#1a1a2e;color:white;margin:0;padding:0;}
+        nav{background:#16213e;padding:15px;display:flex;justify-content:space-between;}
+        .logo{color:#00d4ff;text-decoration:none;font-size:20px;font-weight:bold;}
+        h1{color:#00d4ff;text-align:center;padding-top:20px;}
+        .hotel{text-align:center;color:#aaa;margin-bottom:20px;}
+        .stats{display:flex;justify-content:center;gap:20px;margin:20px;flex-wrap:wrap;}
+        .stat{background:#16213e;padding:20px;border-radius:10px;text-align:center;min-width:150px;}
+        .stat h2{color:#00d4ff;font-size:32px;margin:0;}
+        .alerts{padding:20px;max-width:900px;margin:0 auto;}
+        .alert-high{background:#ff4444;padding:15px;margin:10px;border-radius:8px;}
+        .alert-medium{background:#ff8800;padding:15px;margin:10px;border-radius:8px;}
+        .alert-normal{background:#00aa44;padding:15px;margin:10px;border-radius:8px;}
+        table{width:100%;border-collapse:collapse;margin:20px auto;max-width:900px;}
+        th{background:#16213e;padding:12px;color:#00d4ff;text-align:left;}
+        td{padding:12px;border-bottom:1px solid #16213e;}
+        .high{color:#ff4444;font-weight:bold;}
+        .medium{color:#ff8800;font-weight:bold;}
+        .low{color:#00aa44;font-weight:bold;}
+        .timestamp{color:#aaa;font-size:12px;text-align:center;padding:10px;}
+    </style>
+</head>
+<body>
+<nav>
+    <a href="/home" class="logo">🔐 TrustNest</a>
+    <a href="/login" style="color:#aaa;text-decoration:none;">Logout</a>
+</nav>
+<h1>🔐 TrustNest Security Dashboard</h1>
+<p class="hotel">Hotel Munich — Live Security Monitoring</p>
+<p class="timestamp">Last updated: auto-refreshes every 30 seconds</p>
+
+<div class="stats">
+    <div class="stat"><h2>10</h2><p>Activities Scanned</p></div>
+    <div class="stat"><h2>1</h2><p>Normal ✅</p></div>
+    <div class="stat"><h2>9</h2><p>Suspicious 🚨</p></div>
+</div>
+
+<div class="alerts">
+    <h2>🚨 Live Security Alerts</h2>
+    <div class="alert-high">🚨 Unknown User — 80 records accessed at 3:00am — Score 10/10 — Account LOCKED!</div>
+    <div class="alert-medium">⚠️ John Mueller — 65 records + 350MB download — Score 7/10 — Manager Alerted!</div>
+    <div class="alert-normal">✅ Anna Weber — 8 records at 9:00am — Score 0/10 — Normal Activity</div>
+    <div class="alert-normal">✅ Maria Schmidt — 3 records at 10:00am — Score 0/10 — Normal Activity</div>
+
+    <h2 style="margin-top:30px;">📊 Activity Log</h2>
+    <table>
+        <tr>
+            <th>Staff Member</th>
+            <th>Role</th>
+            <th>Records</th>
+            <th>Failed Logins</th>
+            <th>Download</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Anna Weber</td>
+            <td>receptionist</td>
+            <td>59</td>
+            <td>7</td>
+            <td>329MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="high">🚨 HIGH THREAT</span></td>
+        </tr>
+        <tr>
+            <td>Peter Klein</td>
+            <td>accountant</td>
+            <td>20</td>
+            <td>7</td>
+            <td>84MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="low">✅ NORMAL</span></td>
+        </tr>
+        <tr>
+            <td>Anna Weber</td>
+            <td>receptionist</td>
+            <td>39</td>
+            <td>1</td>
+            <td>91MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="low">✅ NORMAL</span></td>
+        </tr>
+        <tr>
+            <td>Peter Klein</td>
+            <td>accountant</td>
+            <td>40</td>
+            <td>0</td>
+            <td>288MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="low">✅ NORMAL</span></td>
+        </tr>
+        <tr>
+            <td>Anna Weber</td>
+            <td>receptionist</td>
+            <td>79</td>
+            <td>8</td>
+            <td>53MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="medium">⚠️ MEDIUM</span></td>
+        </tr>
+        <tr>
+            <td>Peter Klein</td>
+            <td>accountant</td>
+            <td>71</td>
+            <td>4</td>
+            <td>325MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="high">🚨 HIGH THREAT</span></td>
+        </tr>
+        <tr>
+            <td>Maria Schmidt</td>
+            <td>housekeeping</td>
+            <td>46</td>
+            <td>1</td>
+            <td>444MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="low">✅ NORMAL</span></td>
+        </tr>
+        <tr>
+            <td>Unknown User</td>
+            <td>unknown</td>
+            <td>56</td>
+            <td>3</td>
+            <td>364MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="medium">⚠️ MEDIUM</span></td>
+        </tr>
+        <tr>
+            <td>Anna Weber</td>
+            <td>receptionist</td>
+            <td>24</td>
+            <td>2</td>
+            <td>419MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="low">✅ NORMAL</span></td>
+        </tr>
+        <tr>
+            <td>John Mueller</td>
+            <td>manager</td>
+            <td>73</td>
+            <td>4</td>
+            <td>347MB</td>
+            <td>2026-06-14 15:36:09</td>
+            <td><span class="high">🚨 HIGH THREAT</span></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
