@@ -1,9 +1,7 @@
-
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, redirect, render_teroromplate
 import os
 
 app = Flask(__name__)
-
 @app.route("/")
 @app.route("/home")
 def home():
