@@ -2,7 +2,6 @@ from flask import Flask, request, redirect, render_template, session
 import os
 import stripe
 import json
-import hashlib
 
 stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
 
@@ -10,8 +9,12 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "trustnest2026")
 
 # Load hotel credentials
-with open("hotel_credentials.json", "r") as f:
-    hotel_credentials = json.load(f)
+try:
+    with open("hotel_credentials.json", "r") as f:
+        hotel_credentials = json.load(f)
+except Exception as e:
+    print(f"Error loading credentials: {e}")
+    hotel_credentials = {}
 
 @app.route("/")
 @app.route("/home")
@@ -141,8 +144,12 @@ def checkout(plan, period):
             cancel_url="https://web-production-0b35.up.railway.app/pricing",
         )
         return redirect(checkout_session.url)
-    
+
     except stripe.error.StripeError as e:
         return f"Stripe error: {str(e)}", 400
     except Exception as e:
         return f"Error: {str(e)}", 500
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
